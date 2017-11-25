@@ -41,6 +41,7 @@ rm rstudio-server-rhel-1.1.383-x86_64.rpm
 
 #install shiny and shiny-server (2017-11-22)
 R -e "install.packages('shiny', repos='https://cran.rstudio.com/')"
+
 wget https://download3.rstudio.org/centos5.9/x86_64/shiny-server-1.5.5.872-rh5-x86_64.rpm
 
 yum install -y --nogpgcheck shiny-server-1.5.5.872-rh5-x86_64.rpm
@@ -48,7 +49,9 @@ yum install -y --nogpgcheck shiny-server-1.5.5.872-rh5-x86_64.rpm
 rm shiny-server-1.5.5.872-rh5-x86_64.rpm
 
 #add user(s)
+
 useradd xxxxx
+
 echo xxxxx:yyyyy | chpasswd
 
 Step 6)  Configuring the security group
