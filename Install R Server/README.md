@@ -1,6 +1,7 @@
 Course: AWS Solution Architect Associate
 Assignment: Install & Run R Server + Documentation (+understanding AWS)
 Due date: 24/11/2017
+
 Author: Jean-Marc Uzé
 Version: 1.1
 
