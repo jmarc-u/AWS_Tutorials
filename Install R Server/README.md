@@ -16,7 +16,6 @@ Exec Summary:
 
 Step 1) Select AMI : Amazon Linux AMI 2017.09.1 (HVM), SSD Volume Type
 
-
 Step 2) Select Instance : t2.micro because it is free, although t2. Medium is recommended by Amazon for RServer.
 
 Step 3) select default network and subnet
@@ -35,6 +34,7 @@ Note : it must be a RedHat/CentOS version, 64 bits
 yum install -y R
 
 #install RStudio-Server 1.0.153 (2017-11-22)
+
 wget https://download2.rstudio.org/rstudio-server-rhel-1.1.383-x86_64.rpm
 yum install -y --nogpgcheck rstudio-server-rhel-1.1.383-x86_64.rpm
 rm rstudio-server-rhel-1.1.383-x86_64.rpm
