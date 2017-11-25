@@ -63,14 +63,15 @@ Step 7) connect using a web browser to RStudio Server and R
 http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:8787
 
 Step 8) Notes : commands for debugging/checking the EC2 instance launch in case of a problem :
+
 SSH to the EC2 instance :
 
 MacBook-Pro-de-Jean-Marc:AWS Solution Architect jmarc$ chmod 400 MyRServer.pem
+
 MacBook-Pro-de-Jean-Marc:AWS Solution Architect jmarc$ ssh -i "MyRServer.pem" ec2-user@ec2-54-229-105-204.eu-west-1.compute.amazonaws.com
 
-
-
 [ec2-user@ip-172-31-32-249 ~]$ curl http://169.254.169.254/latest/user-data
+
 #!/bin/bash
 #install R
 yum install -y R
