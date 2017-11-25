@@ -57,8 +57,10 @@ echo xxxxx:yyyyy | chpasswd
 Step 6)  Configuring the security group
 In the EC2 launch wizard, we define a security group, which acts as a virtual firewall that controls the traffic for one or more instances. For our R-based analysis environment, we have to open up port 8787 for RStudio Server and port 3838 for Shiny Server.
 We store it with name « rstats » for future instance launch.
+
 Step 7) connect using a web browser to RStudio Server and R
 http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:8787
+
 Step 8) Notes : commands for debugging/checking the EC2 instance launch in case of a problem :
 SSH to the EC2 instance :
 
