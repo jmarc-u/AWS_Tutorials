@@ -60,6 +60,7 @@ In the EC2 launch wizard, we define a security group, which acts as a virtual fi
 We store it with name « rstats » for future instance launch.
 
 Step 7) connect using a web browser to RStudio Server and R
+
 http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:8787
 
 Step 8) Notes : commands for debugging/checking the EC2 instance launch in case of a problem :
@@ -74,21 +75,31 @@ MacBook-Pro-de-Jean-Marc:AWS Solution Architect jmarc$ ssh -i "MyRServer.pem" ec
 
 #!/bin/bash
 #install R
+
 yum install -y R
 
 #install RStudio-Server 1.0.153 (2017-11-22)
+
 wget https://download2.rstudio.org/rstudio-server-rhel-1.1.383-x86_64.rpm
+
 yum install -y --nogpgcheck rstudio-server-rhel-1.1.383-x86_64.rpm
+
 rm rstudio-server-rhel-1.1.383-x86_64.rpm
 
 #install shiny and shiny-server (2017-11-22)
+
 R -e "install.packages('shiny', repos='https://cran.rstudio.com/')"
+
 wget https://download3.rstudio.org/centos5.9/x86_64/shiny-server-1.5.5.872-rh5-x86_64.rpm
+
 yum install -y --nogpgcheck shiny-server-1.5.5.872-rh5-x86_64.rpm
+
 rm shiny-server-1.5.5.872-rh5-x86_64.rpm
 
 #add user(s)
+
 useradd xxxxx
+
 echo xxxxx:yyyyy | chpasswd [ec2-user@ip-172-31-32-249 ~]$
 
 
