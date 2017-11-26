@@ -51,8 +51,7 @@ PING www.google.com (108.177.98.103) 56(84) bytes of data.
 rtt min/avg/max/mdev = 143.387/143.468/143.607/0.448 ms
 ```
 
-References
-----------
+**References**
 
 NAT Gateways: <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html>
 
