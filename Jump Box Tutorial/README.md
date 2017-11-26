@@ -19,7 +19,16 @@ We want *IB* to ping any destination in the Internet, although it is in a privat
 4) We create the subnet *Public-JumpBox* with CIDR 10.0.1.0/24 (*SA* in our problem statement) and subnet *Private-JumpBox* with CIDR 10.0.2.0/24 (*SB* in our problem statement) 
 5) We launch the public EC2 instance *Public EC2* attached to subnet *Public-JumpBox*, with automatic allocation of a public Internet address. We also accept SSH connextion (port TCP 22) from anywhere (0.0.0.0/0)
 6) We launch the private EC2 instance *Private EC2* attached to subnet *Private-JumpBox*, with no allocation of a public Internet address. We also accept SSH connextion (port TCP 22) from subnet *Public-JumpBox* (10.0.1.0/24) and accept to receive ping responses (ICMP) from anywhere (0.0.0.0/0).
+7) We connect to *Public EC2* withh SSH from local laptop, using the appropriate .pem key.
+8) on *Public EC2* we copy/paste the .pem key from our local laptop to a file with following commands:
+```
+echo "-----BEGIN RSA PRIVATE KEY-----
+blablabla
+-----END RSA PRIVATE KEY-----" > /home/ec2-user/MyRServer.pem
 
+chmod 400 /home/ec2-user/MyRServer.pem
+```
+9) 
 
 Within the VPC we create the *SA* subnet 10.0.1.0/16 as a **public** subnet\
 and the *SB* subnet 10.0.2.0/16 as **private** subnet\
