@@ -13,7 +13,10 @@ We want *IB* to ping any destination in the Internet, although it is in a privat
 
 **Solution**
 
-We create a VPC with the subnet 10.0.0.0/16\
+1) We create a the Virtual Private Cloud *VPC Jump Box* with the subnet 10.0.0.0/16\
+2) We create a the internet gateway *igw-JumpBox* and attach it to *VPC Jump Box*\
+4) in the route table associate to *VPC Jump Box* we create the default route 0.0.0.0/0 with next stop *igw-JumpBox*\
+
 Within the VPC we create the *SA* subnet 10.0.1.0/16 as a **public** subnet\
 and the *SB* subnet 10.0.2.0/16 as **private** subnet\
 
