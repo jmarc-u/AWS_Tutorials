@@ -13,13 +13,13 @@ We want *IB* to ping any destination in the Internet, although it is in a privat
 
 **Solution**
 
-1) We create a the Virtual Private Cloud *VPC Jump Box* with the subnet 10.0.0.0/16
-2) We create a the internet gateway *igw-JumpBox* and attach it to *VPC Jump Box*
+1) We create the Virtual Private Cloud *VPC Jump Box* with the subnet 10.0.0.0/16
+2) We create the internet gateway *igw-JumpBox* and attach it to *VPC Jump Box*
 3) In the route table associate to *VPC Jump Box* we create the default route 0.0.0.0/0 with next stop *igw-JumpBox*
 4) We create the subnet *Public-JumpBox* with CIDR 10.0.1.0/24 (*SA* in our problem statement) and subnet *Private-JumpBox* with CIDR 10.0.2.0/24 (*SB* in our problem statement) 
 5) We launch the public EC2 instance *Public EC2* attached to subnet *Public-JumpBox*, with automatic allocation of a public Internet address. We also accept SSH connextion (port TCP 22) from anywhere (0.0.0.0/0)
-6) We launch the private EC2 instance *Private EC2* attached to subnet *Private-JumpBox*, with no allocation of a public Internet address. We also accept SSH connextion (port TCP 22) from subnet *Public-JumpBox* (10.0.1.0/24) and accept to receive ping responses (ICMP) from anywhere (0.0.0.0/0).
-7) We connect to *Public EC2* withh SSH from local laptop, using the appropriate .pem key.
+6) We launch the private EC2 instance *Private EC2* attached to subnet *Private-JumpBox*, with no allocation of a public Internet address. We also accept SSH connextion (port TCP 22) from subnet *Public-JumpBox* (10.0.1.0/24) and **accept to receive ping responses (ICMP) from anywhere (0.0.0.0/0)**.
+7) We connect to *Public EC2* with SSH from local laptop, using the appropriate .pem key.
 8) on *Public EC2* we copy/paste the .pem key from our local laptop to a file with following commands:
 ```
 echo "-----BEGIN RSA PRIVATE KEY-----
@@ -28,15 +28,14 @@ blablabla
 
 chmod 400 /home/ec2-user/MyRServer.pem
 ```
-9) We can now connect from *Public EC2* to *Private EC2* using SSH and this .pem file (*MyRServer.pem* in the example above)
-
-Within the VPC we create the *SA* subnet 10.0.1.0/16 as a **public** subnet\
-and the *SB* subnet 10.0.2.0/16 as **private** subnet\
-
-
+9) We can now connect from *Public EC2* to *Private EC2* using SSH with this .pem file (*MyRServer.pem* in the example above)
+10) we create a NAT Gateway associated to subnet *Public-JumpBox* and to an Elastic IP address.
+11) We create a new Route Table called *RT Private Jump Box* associated to subnet *Private-JumpBox*. We add following routes:
+```
+Destination   Target
+10.0.0.0/16   Local
+0.0.0.0/0     <the name of the just created nat gateway>
+```
+Note: the route table associated to subnet *Public-JumpBox* remains in the main route table of *VPC Jump Box*
 
 echo "-----BEGIN RSA PRIVATE KEY-----
-blablabla
------END RSA PRIVATE KEY-----" > /home/ec2-user/MyRServer.pem
-
-chmod 400 /home/ec2-user/MyRServer.pem
