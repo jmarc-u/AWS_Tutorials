@@ -19,7 +19,7 @@ Jump Box Tutorial
 4) We create the subnet *Public-JumpBox* with CIDR 10.0.1.0/24 (*SA* in our problem statement) and subnet *Private-JumpBox* with CIDR 10.0.2.0/24 (*SB* in our problem statement) 
 5) We launch the public EC2 instance *Public EC2* associated to subnet *Public-JumpBox*, with automatic allocation of a public Internet address. We also accept SSH connextion (port TCP 22) from anywhere (0.0.0.0/0)
 6) We launch the private EC2 instance *Private EC2* associated to subnet *Private-JumpBox*, with no allocation of a public Internet address. We also accept SSH connexion (port TCP 22) from subnet *Public-JumpBox* (10.0.1.0/24) and **accept to receive ping responses (ICMP) from anywhere (0.0.0.0/0)**.
-7) We connect to *Public EC2* with SSH from local laptop, using the appropriate .pem key.
+7) We connect to *Public EC2* with SSH from local laptop, using the appropriate .pem key.\
 8) on *Public EC2* we copy/paste the .pem key from our local laptop to a file with following commands:
 ```
 echo "-----BEGIN RSA PRIVATE KEY-----
