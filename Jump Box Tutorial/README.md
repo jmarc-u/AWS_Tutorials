@@ -24,3 +24,10 @@ We want *IB* to ping any destination in the Internet, although it is in a privat
 Within the VPC we create the *SA* subnet 10.0.1.0/16 as a **public** subnet\
 and the *SB* subnet 10.0.2.0/16 as **private** subnet\
 
+
+
+echo "-----BEGIN RSA PRIVATE KEY-----
+blablabla
+-----END RSA PRIVATE KEY-----" > /home/ec2-user/MyRServer.pem
+
+chmod 400 /home/ec2-user/MyRServer.pem
