@@ -28,7 +28,7 @@ blablabla
 
 chmod 400 /home/ec2-user/MyRServer.pem
 ```
-9) 
+9) We can now connect from *Public EC2* to *Private EC2* using SSH and this .pem file (*MyRServer.pem* in the example above)
 
 Within the VPC we create the *SA* subnet 10.0.1.0/16 as a **public** subnet\
 and the *SB* subnet 10.0.2.0/16 as **private** subnet\
