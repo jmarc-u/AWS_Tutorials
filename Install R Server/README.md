@@ -1,5 +1,4 @@
 Course: AWS Solution Architect Associate
-----------------------------------------
 
 Assignment: Install & Run R Server + Documentation (+understanding AWS)
 -----------------------------------------------------------------------
