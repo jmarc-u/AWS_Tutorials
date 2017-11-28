@@ -1,7 +1,13 @@
-Jump Box Tutorial
------------------
-
 *Note: this is my first Markdown based document and I used the tutorial on <http://agea.github.io/tutorial.md/>*
+
+**Course:** AWS Solution Architect Associate
+
+Assignment: Jump Box Tutorial
+-----------------------------
+
+**Due date:** 28/11/2017\
+**Author:** Jean-Marc Uzé\
+**Version:** 1.1
 
 **Problem Statement**
 
