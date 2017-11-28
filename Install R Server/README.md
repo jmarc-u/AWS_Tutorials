@@ -1,14 +1,14 @@
-Course: AWS Solution Architect Associate
+**Course:** AWS Solution Architect Associate
 
 Assignment: Install & Run R Server + Documentation (+understanding AWS)
 -----------------------------------------------------------------------
 
-Due date: 24/11/2017
+**Due date:** 24/11/2017
 
-Author: Jean-Marc Uzé
-Version: 1.1
+**Author:** Jean-Marc Uzé
+**Version:** 1.1
 
-Exec Summary:
+**Exec Summary:**
 -	we launch a standard EC2 instance
 -	we install R, R Server, and Shiny Server (the latest not requested but it looks cool !) with a combination of user data and SSH commands
 -	we check and test
@@ -175,6 +175,7 @@ Don’t forget to allocate a public access network and the  security group « rs
 
 
 **Keep data storage**
+
 In case you terminate the instance it will destroy the root EBS and its data, if instance was created with default behavior.
 In case we don’t want to save another AMI image with the data, here is how I succeed it to retrieve my data with future instance of same AMI:
 1)	I stop the instance
