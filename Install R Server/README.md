@@ -5,7 +5,8 @@ Assignment: Install & Run R Server + Documentation (+understanding AWS)
 
 **Due date:** 24/11/2017\
 **Author:** Jean-Marc Uzé\
-**Version:** 1.2\
+**Version:** 1.2
+
 **Exec Summary:**
 -	we launch a standard EC2 instance
 -	we install R, R Server, and Shiny Server (the latest not requested but it looks cool !) with a combination of user data and SSH commands
