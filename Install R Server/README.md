@@ -23,12 +23,12 @@ Step 3) select default network and subnet
 Step 4) activate automatic public address assignment
 
 Step 5) Add following user data code according instructions on 
-https://aws.amazon.com/fr/blogs/big-data/running-r-on-aws/
+<https://aws.amazon.com/fr/blogs/big-data/running-r-on-aws/>
 
-Take care of loading the latest version of RStudio checking on  https://www.rstudio.com/products/rstudio/download-server/
+Take care of loading the latest version of RStudio checking on <https://www.rstudio.com/products/rstudio/download-server/>
 
 Note : it must be a RedHat/CentOS version, 64 bits
-
+```
 #!/bin/bash
 #install R
 yum install -y R
@@ -54,6 +54,7 @@ rm shiny-server-1.5.5.872-rh5-x86_64.rpm
 useradd xxxxx
 
 echo xxxxx:yyyyy | chpasswd
+```
 
 Step 6)  Configuring the security group
 In the EC2 launch wizard, we define a security group, which acts as a virtual firewall that controls the traffic for one or more instances. For our R-based analysis environment, we have to open up port 8787 for RStudio Server and port 3838 for Shiny Server.
@@ -61,12 +62,13 @@ We store it with name « rstats » for future instance launch.
 
 Step 7) connect using a web browser to RStudio Server and R
 
-http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:8787
+<http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:8787>
 
 Step 8) Notes : commands for debugging/checking the EC2 instance launch in case of a problem :
 
 SSH to the EC2 instance :
 
+``` 
 MacBook-Pro-de-Jean-Marc:AWS Solution Architect jmarc$ chmod 400 MyRServer.pem
 
 MacBook-Pro-de-Jean-Marc:AWS Solution Architect jmarc$ ssh -i "MyRServer.pem" ec2-user@ec2-54-229-105-204.eu-west-1.compute.amazonaws.com
@@ -104,15 +106,15 @@ echo xxxxx:yyyyy | chpasswd [ec2-user@ip-172-31-32-249 ~]$
 
 
 [ec2-user@ip-172-31-32-249 ~]$ cat /var/log/cloud-init-output.log
-
+```
 
 
 Step 9)  some R packages require installed Linux packages. So we install the curl-devel Linux package so that we can use the R package “RCurl”
-
+```
 ec2-user@ip-172-31-32-249 ~]$ sudo yum install curl-devel
-
+```
 Step 10) Configuring Shiny Server
-
+```
 [ec2-user@ip-172-31-32-249 ~]$ mkdir ~/ShinyApps
 
 [ec2-user@ip-172-31-32-249 ~]$ sudo /opt/shiny-server/bin/deploy-example user-dirs
@@ -143,12 +145,12 @@ shiny-server start/running, process 5677
 The user-dirs config is all setup now. Enjoy!
 
 [ec2-user@ip-172-31-32-249 ~]$ cp -R /opt/shiny-server/samples/sample-apps/hello ~/ShinyApps/
-
+```
 
 
 Step 11) Connect using a web browser to Shiny Server
 
-http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:3838/ec2-user/hello/
+<http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:3838/ec2-user/hello/>
 
 Now I can create your Shiny dashboards and deploy them via your ShinyApps folder. For advice on creating a Shiny dashboard, see the Teach Yourself Shiny tutorial.
 
@@ -167,8 +169,6 @@ Step 13) Check Availability of the personal AMI in Images->AMI
 
 We can launch the instance from there.
 Don’t forget to allocate a public access network and the  security group « rstats » as stored in step 6
-
-
 
 
 Keep data storage:
