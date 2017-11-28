@@ -17,15 +17,15 @@ Exec Summary:
 
 
 
-Step 1) Select AMI : Amazon Linux AMI 2017.09.1 (HVM), SSD Volume Type
+**Step 1)** Select AMI : Amazon Linux AMI 2017.09.1 (HVM), SSD Volume Type
 
-Step 2) Select Instance : t2.micro because it is free, although t2. Medium is recommended by Amazon for RServer.
+**Step 2)** Select Instance : t2.micro because it is free, although t2. Medium is recommended by Amazon for RServer.
 
-Step 3) select default network and subnet
+**Step 3)** select default network and subnet
 
-Step 4) activate automatic public address assignment
+**Step 4)** activate automatic public address assignment
 
-Step 5) Add following user data code according instructions on 
+**Step 5)** Add following user data code according instructions on 
 <https://aws.amazon.com/fr/blogs/big-data/running-r-on-aws/>
 
 Take care of loading the latest version of RStudio checking on <https://www.rstudio.com/products/rstudio/download-server/>
@@ -59,15 +59,15 @@ useradd xxxxx
 echo xxxxx:yyyyy | chpasswd
 ```
 
-Step 6)  Configuring the security group
+**Step 6)**  Configuring the security group
 In the EC2 launch wizard, we define a security group, which acts as a virtual firewall that controls the traffic for one or more instances. For our R-based analysis environment, we have to open up port 8787 for RStudio Server and port 3838 for Shiny Server.
 We store it with name « rstats » for future instance launch.
 
-Step 7) connect using a web browser to RStudio Server and R
+**Step 7)** connect using a web browser to RStudio Server and R
 
 <http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:8787>
 
-Step 8) Notes : commands for debugging/checking the EC2 instance launch in case of a problem :
+**Step 8)** Notes : commands for debugging/checking the EC2 instance launch in case of a problem :
 
 SSH to the EC2 instance :
 
@@ -112,11 +112,11 @@ echo xxxxx:yyyyy | chpasswd [ec2-user@ip-172-31-32-249 ~]$
 ```
 
 
-Step 9)  some R packages require installed Linux packages. So we install the curl-devel Linux package so that we can use the R package “RCurl”
+**Step 9)**  some R packages require installed Linux packages. So we install the curl-devel Linux package so that we can use the R package “RCurl”
 ```
 ec2-user@ip-172-31-32-249 ~]$ sudo yum install curl-devel
 ```
-Step 10) Configuring Shiny Server
+**Step 10)** Configuring Shiny Server
 ```
 [ec2-user@ip-172-31-32-249 ~]$ mkdir ~/ShinyApps
 
@@ -151,7 +151,7 @@ The user-dirs config is all setup now. Enjoy!
 ```
 
 
-Step 11) Connect using a web browser to Shiny Server
+**Step 11)** Connect using a web browser to Shiny Server
 
 <http://ec2-54-229-105-204.eu-west-1.compute.amazonaws.com:3838/ec2-user/hello/>
 
@@ -159,7 +159,7 @@ Now I can create your Shiny dashboards and deploy them via your ShinyApps folder
 
 
 
-Step 12) Create an AMI image for fast future launches
+**Step 12)** Create an AMI image for fast future launches
 The easiest way to save an AMI with new modifications is to create the AMI image directly from the running instance.
 
 From the AWS Management Console, click on the instance, then right-click Image -> Create Image.
@@ -168,7 +168,7 @@ From that dialog, set the Name, Description etc. Make sure to leave No Reboot un
 
 
 
-Step 13) Check Availability of the personal AMI in Images->AMI 
+**Step 13)** Check Availability of the personal AMI in Images->AMI 
 
 We can launch the instance from there.
 Don’t forget to allocate a public access network and the  security group « rstats » as stored in step 6
