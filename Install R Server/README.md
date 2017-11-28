@@ -174,7 +174,7 @@ We can launch the instance from there.
 Don’t forget to allocate a public access network and the  security group « rstats » as stored in step 6
 
 
-**Keep data storage**
+**How to keep our data storage (EBS) when terminating the instance**
 
 In case you terminate the instance it will destroy the root EBS and its data, if instance was created with default behavior.
 In case we don’t want to save another AMI image with the data, here is how I succeed it to retrieve my data with future instance of same AMI:
