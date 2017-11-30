@@ -1,6 +1,9 @@
 Install Node.js and Express on Mac
 ----------------------------------
 
+
+Following some instructions on <http://dandean.com/nodejs-npm-express-osx/>
+
 1) Go to <https://nodejs.org/en/>\
 Select Recommended version for Mac and download\
 Start the received .pk\
@@ -26,3 +29,7 @@ sh-3.2# cd bitchin-express-app/
 
 
 ```
+
+Now using this book:
+book on Safari: <https://www.safaribooksonline.com/library/view/mean-web-development/9781785886300/>
+
